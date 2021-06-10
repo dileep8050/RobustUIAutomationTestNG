@@ -22,10 +22,6 @@ public final class ExtentLogger {
 	public static void info(String message) {
 		ExtentManager.getExtentTest().info(message);
 	}
-	public static void category(String message) {
-		ExtentManager.getExtentTest().assignCategory(message);
-	}
-
 	public static String getBase64Image()
 	{
 		return ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);

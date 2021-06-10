@@ -1,17 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 31.306 s <<< FAILURE! - in TestSuite
-loginLogoutSaucePortal(com.learn.tests.SauceTest)  Time elapsed: 1.024 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='shopping_cart_container']/a"}
-  (Session info: chrome=91.0.4472.77)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'INBL01LAP04326', ip: '192.168.225.118', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\DILEEP~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:60683}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8a6e15cd731fc5c424f02d50cc3f266e
-*** Element info: {Using=xpath, value=//*[@id='shopping_cart_container']/a}
-	at com.learn.tests.SauceTest.loginLogoutSaucePortal(SauceTest.java:23)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.582 s - in TestSuite

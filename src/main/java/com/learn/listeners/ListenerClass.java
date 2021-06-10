@@ -6,10 +6,13 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.learn.annotations.FrameworkAnnotation;
 import com.learn.reports.ExtentLogger;
 import com.learn.reports.ExtentReport;
 
 public class ListenerClass implements ITestListener, ISuiteListener {
+
+	
 	public void onStart(ISuite suite) {
 			ExtentReport.initExtentReport();
 		}
@@ -19,7 +22,10 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 		}
 
 		public void onTestStart(ITestResult result) {
-			ExtentReport.createTest(result.getMethod().getMethodName());
+			ExtentReport.createTest(result.getMethod().getMethodName());	
+			ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).author());
+			ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).category());
+			
 		}
 
 		public void onTestSuccess(ITestResult result) {
