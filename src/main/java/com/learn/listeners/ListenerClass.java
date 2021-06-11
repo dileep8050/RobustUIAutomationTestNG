@@ -5,8 +5,8 @@ import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.Test;
 
-import com.learn.annotations.FrameworkAnnotation;
 import com.learn.reports.ExtentLogger;
 import com.learn.reports.ExtentReport;
 
@@ -23,9 +23,7 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 
 		public void onTestStart(ITestResult result) {
 			ExtentReport.createTest(result.getMethod().getMethodName());	
-			ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).author());
-			ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).category());
-			
+			ExtentReport.addgroups(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(Test.class).groups());
 		}
 
 		public void onTestSuccess(ITestResult result) {

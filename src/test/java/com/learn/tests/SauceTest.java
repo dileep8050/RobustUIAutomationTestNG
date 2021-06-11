@@ -3,8 +3,6 @@ package com.learn.tests;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.learn.annotations.FrameworkAnnotation;
-import com.learn.enums.CategoryType;
 import com.learn.pages.SauceHomePage;
 import com.learn.pages.SauceLoginPage;
 import com.learn.reports.ExtentLogger;
@@ -13,7 +11,6 @@ import com.learn.reports.ExtentLogger;
 public final class SauceTest extends BaseTest{
 	private SauceTest() {}
 	
-	@FrameworkAnnotation(author= {"Dileep","Tanav"}, category={CategoryType.REGRESSION,CategoryType.SANITY})
 	@Test(dataProvider ="LoginDetails" ,groups= {"reg","sanity"})
 	public void loginLogoutSaucePortal(String username, String password)
 	{
@@ -39,7 +36,6 @@ public final class SauceTest extends BaseTest{
 		return obj;
 	}
 	
-	@FrameworkAnnotation(author= "Dileep", category=CategoryType.SMOKE)
 	@Test(groups= {"smoke"})
 	public void test3()
 	{
@@ -49,14 +45,12 @@ public final class SauceTest extends BaseTest{
 		shp.getcart().isDisplayed();
 	}
 	
-	@FrameworkAnnotation(author= "Tanav", category=CategoryType.SMOKE)
 	@Test(groups= {"smoke"})
 	public void test4()
 	{
 	ExtentLogger.info("Using annotatin abc");
 	}
 	
-	@FrameworkAnnotation(author= "Tanav", category=CategoryType.REGRESSION)
 	@Test(groups= {"reg"})
 	public void test5()
 	{

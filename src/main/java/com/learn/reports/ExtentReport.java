@@ -5,7 +5,7 @@ import java.util.Objects;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.learn.enums.CategoryType;
+import com.aventstack.extentreports.reporter.configuration.ViewName;
 
 public final class ExtentReport {
 	private ExtentReport() {}
@@ -18,7 +18,8 @@ public final class ExtentReport {
 		if(Objects.isNull(extent))
 		{
 		extent =new ExtentReports();
-		ExtentSparkReporter spark=new ExtentSparkReporter("index.html");
+		ExtentSparkReporter spark=new ExtentSparkReporter("index.html")
+				.viewConfigurer().viewOrder().as(new ViewName[] {ViewName.DASHBOARD,ViewName.CATEGORY,ViewName.TEST,ViewName.AUTHOR}).apply();
 		extent.attachReporter(spark);
 		
 		spark.config().setTheme(Theme.STANDARD);
@@ -39,18 +40,11 @@ public final class ExtentReport {
 	{
 		ExtentManager.setExtentTest(extent.createTest(testName));
 	}
-	public static void addAuthors(String[] authors)
+	public static void addgroups(String[] groups)
 	{
-		for(String temp:authors) {
-			ExtentManager.getExtentTest().assignAuthor(temp);
+		for(String temp:groups) {
+			ExtentManager.getExtentTest().assignCategory(temp);
 		}
-	}
-	public static void addCategories(CategoryType[] categories)
-	{
-		for(CategoryType temp:categories) {
-			ExtentManager.getExtentTest().assignCategory(temp.toString());
-		}
-		
 	}
 
 }
